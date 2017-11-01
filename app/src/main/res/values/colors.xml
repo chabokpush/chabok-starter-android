@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4998FF</color>
+    <color name="colorPrimaryDark">#177AFB</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="connected_status">#67ce45</color>
+    <color name="connecting_status">#ffd940</color>
+    <color name="disconnected_status">#ff5d40</color>
+</resources>

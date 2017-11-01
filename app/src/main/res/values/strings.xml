@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">chabok-starter</string>
+    <string name="connected">وصل شده</string>
+    <string name="connecting">در حال اتصال</string>
+    <string name="disconnected">قطع شده</string>
+</resources>
