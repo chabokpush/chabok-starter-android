@@ -31,5 +31,5 @@ dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.18@aar'
     compile 'com.adpdigital.push:chabok-lib:2.8.0'
 
-    compile "com.google.android.gms:play-services-gcm:10.0.1"
+    compile "com.google.android.gms:play-services-gcm:11.0.4"
 }
