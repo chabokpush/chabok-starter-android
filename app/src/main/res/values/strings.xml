@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">chabok-starter</string>
-    <string name="connected">وصل شده</string>
+    <string name="connected">آنلاین</string>
     <string name="connecting">در حال اتصال</string>
-    <string name="disconnected">قطع شده</string>
+    <string name="disconnected">آفلاین</string>
+    <string name="register">ثبت‌نام‌</string>
+
+    <string name="user_id">شناسه کاربر</string>
+    <string name="invalid_user_id">شناسه کاربر نمی‌تواند خالی باشد.</string>
 </resources>

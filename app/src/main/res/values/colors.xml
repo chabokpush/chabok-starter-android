@@ -3,7 +3,11 @@
     <color name="colorPrimary">#4998FF</color>
     <color name="colorPrimaryDark">#177AFB</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="hint_color">#BDBDBD</color>
 
+
+    <color name="splash_start">#177AFB</color>
+    <color name="splash_end">#4998FF</color>
 
     <color name="connected_status">#67ce45</color>
     <color name="connecting_status">#ffd940</color>

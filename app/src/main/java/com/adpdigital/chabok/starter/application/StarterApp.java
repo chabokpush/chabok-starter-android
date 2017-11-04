@@ -1,18 +1,20 @@
-package com.adpdigital.chabok.starter;
+package com.adpdigital.chabok.starter.application;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
+import com.adpdigital.chabok.starter.activity.MainActivity;
+import com.adpdigital.chabok.starter.common.Constants;
 import com.adpdigital.push.AdpPushClient;
+
+import static com.adpdigital.chabok.starter.common.Constants.SDK_PASSWORD;
+import static com.adpdigital.chabok.starter.common.Constants.SDK_USERNAME;
+import static com.adpdigital.chabok.starter.common.Constants.YOUR_API_KEY;
+import static com.adpdigital.chabok.starter.common.Constants.YOUR_APP_ID;
 
 
 public class StarterApp extends Application {
-
-    // TODO: use your data from your account in panel
-
-    private static final String YOUR_APP_ID = "YOUR_APP_ID/SENDER_ID";
-    private static final String YOUR_API_KEY = "YOUR_API_KEY";
-    private static final String SDK_USERNAME = "SDK_USERNAME";
-    private static final String SDK_PASSWORD = "SDK_PASSWORD";
 
     private AdpPushClient chabok = null;
 
@@ -34,9 +36,12 @@ public class StarterApp extends Application {
             );
             chabok.setDevelopment(true);
 
-            // TODO: use your logic for unique user id
+            SharedPreferences myPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            String userId = myPref.getString(Constants.USER_ID, "");
 
-            chabok.register("USER_ID");
+            if (!"".equals(userId)) {
+                chabok.reRegister(userId);
+            }
         }
     }
 

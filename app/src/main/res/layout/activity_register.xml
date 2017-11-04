@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    tools:context="com.adpdigital.chabok.starter.activity.RegisterActivity">
+
+    <LinearLayout
+        android:id="@+id/register_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/user_id"
+            android:layout_width="300dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/white_input_bg"
+            android:gravity="center"
+            android:hint="@string/user_id"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/hint_color"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="163dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/blue_btn_bg"
+            android:gravity="center"
+            android:text="@string/register"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

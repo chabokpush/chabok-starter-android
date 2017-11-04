@@ -1,24 +1,26 @@
-package com.adpdigital.chabok.starter;
+package com.adpdigital.chabok.starter.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
+import com.adpdigital.chabok.starter.R;
+import com.adpdigital.chabok.starter.application.StarterApp;
 import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.Callback;
 import com.adpdigital.push.ConnectionStatus;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    String TAG = "MainActivity";
     private AdpPushClient chabok;
-    private TextView connectionStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         chabok = ((StarterApp) getApplication()).getPushClient();
-        connectionStatus = (TextView) findViewById(R.id.connection_status);
 
     }
 
@@ -43,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void attachPushClient() {
         if (chabok != null) {
-            chabok.setPushListener(this);
+            chabok.addListener(this);
         }
+
+        fetchAndUpdateConnectionStatus();
     }
 
     private void detachPushClient() {
@@ -58,11 +62,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 updateConnectionStatus(status);
+                Log.i(TAG, status.name());
+            }
+        });
+    }
+
+    protected void fetchAndUpdateConnectionStatus() {
+        if (chabok == null) {
+            return;
+        }
+        chabok.getStatus(new Callback<ConnectionStatus>() {
+            @Override
+            public void onSuccess(ConnectionStatus connectionStatus) {
+                Log.i(TAG + "_fetch", connectionStatus.name());
+                updateConnectionStatus(connectionStatus);
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                Log.i(TAG, "errrror ");
             }
         });
     }
 
     private void updateConnectionStatus(ConnectionStatus status) {
+
+        TextView connectionStatus = (TextView) findViewById(R.id.connection_status);
 
         if (connectionStatus != null && status != null) {
             switch (status) {
