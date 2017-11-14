@@ -3,10 +3,10 @@ package com.adpdigital.chabok.starter.common;
 
 public interface Constants {
     // TODO: use your data from your account in panel
-    String YOUR_APP_ID = "YOUR_APP_ID/SENDER_ID";
-    String YOUR_API_KEY = "YOUR_API_KEY";
-    String SDK_USERNAME = "SDK_USERNAME";
-    String SDK_PASSWORD = "SDK_PASSWORD";
+    String YOUR_APP_ID = "chabok-starter/339811759516";
+    String YOUR_API_KEY = "da5b6aeabee9e5fca9536ca1ecb121775868b3b0";
+    String SDK_USERNAME = "chabok-starter";
+    String SDK_PASSWORD = "chabok-starter";
 
 
     String USER_ID = "USER_ID";
