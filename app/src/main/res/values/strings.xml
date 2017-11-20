@@ -4,7 +4,10 @@
     <string name="connecting">در حال اتصال</string>
     <string name="disconnected">آفلاین</string>
     <string name="register">ثبت‌نام‌</string>
-
+    <string name="dont_show_again">دوباره نمایش نده</string>
+    <string name="goto_protected">برو به برنامه های محافظت شده</string>
+    <string name="remindme">یادآوری کن</string>
+    <string name="menu_item_ok">تایید</string>
     <string name="user_id">شناسه کاربر</string>
     <string name="invalid_user_id">شناسه کاربر نمی‌تواند خالی باشد.</string>
 </resources>
