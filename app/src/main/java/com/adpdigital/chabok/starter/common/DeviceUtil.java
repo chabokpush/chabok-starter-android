@@ -36,8 +36,8 @@ public class DeviceUtil {
     public static void ifHuaweiAlert(Activity ctx, String deviceManufacturer) {
         ifHuaweiAlert(
                 ctx,
-                "برنامه‌های محافظت شده",
-                String.format("برنامه %s برای کارکرد درست می‌بایست در لیست برنامه‌های محافظت شده فعال شود.%n",
+                ctx.getString(R.string.protected_apps),
+                String.format(ctx.getString(R.string.protected_apps_desc),
                         ctx.getString(R.string.app_name)),
                 deviceManufacturer
         );
