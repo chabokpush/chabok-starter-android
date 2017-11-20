@@ -18,7 +18,7 @@ import com.adpdigital.push.ConnectionStatus;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FIRST_RUN_PREFERENCES_NAME = "skipProtectedAppsMessage";
-    static boolean shown = false;
+
     String TAG = "MainActivity";
     private AdpPushClient chabok;
 
@@ -40,13 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         final SharedPreferences preferences = getSharedPreferences("ProtectedApps", Context.MODE_PRIVATE);
         boolean isFirstTime = preferences.getBoolean(FIRST_RUN_PREFERENCES_NAME, false);
-        if (!isFirstTime && !shown) {
+        if (!isFirstTime) {
             showProtectedAppDialog(deviceManufacturer);
         }
     }
 
     private void showProtectedAppDialog(String deviceManufacturer) {
-        shown = true;
         DeviceUtil.ifHuaweiAlert(this, deviceManufacturer);
     }
 
