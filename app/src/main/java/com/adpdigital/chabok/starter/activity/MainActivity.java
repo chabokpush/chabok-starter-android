@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void fetchAndUpdateConnectionStatus() {
+    private void fetchAndUpdateConnectionStatus() {
         if (chabok == null) {
             return;
         }
