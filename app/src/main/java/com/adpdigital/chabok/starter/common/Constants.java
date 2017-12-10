@@ -9,6 +9,6 @@ public interface Constants {
     String SDK_PASSWORD = "chabok-starter";
 
 
-    String USER_ID = "USER_ID";
-    String CHANNEL_NAME = "alert";
+    String CHANNEL_NAME = "wall"; // public channel
+    String PRIVATE_CHANNEL_NAME = "private/alert"; // private channel
 }
