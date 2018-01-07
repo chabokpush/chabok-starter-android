@@ -1,16 +1,12 @@
 package com.adpdigital.chabok.starter.activity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.adpdigital.chabok.starter.R;
 import com.adpdigital.chabok.starter.application.StarterApp;
-import com.adpdigital.chabok.starter.common.DeviceUtil;
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.Callback;
 import com.adpdigital.push.ConnectionStatus;
@@ -28,26 +24,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         chabok = ((StarterApp) getApplication()).getPushClient();
 
-        // if deviceManufacturer is huawei or xiaomi, show protected apps guide
-        String deviceManufacturer = DeviceUtil.getDeviceManufacturer().toLowerCase();
-        if(!TextUtils.isEmpty(deviceManufacturer) && (deviceManufacturer.contains("huawei") ||
-                deviceManufacturer.contains("xiaomi"))) {
-            showGuide(deviceManufacturer);
+
+        if (chabok.hasProtectedAppSupport()) {
+
+            chabok.showProtectedAppSettings(MainActivity.this, getString(R.string.app_name), null, null);
         }
+
     }
 
-    private void showGuide(final String deviceManufacturer) {
-
-        final SharedPreferences preferences = getSharedPreferences("ProtectedApps", Context.MODE_PRIVATE);
-        boolean isFirstTime = preferences.getBoolean(FIRST_RUN_PREFERENCES_NAME, false);
-        if (!isFirstTime) {
-            showProtectedAppDialog(deviceManufacturer);
-        }
-    }
-
-    private void showProtectedAppDialog(String deviceManufacturer) {
-        DeviceUtil.ifHuaweiAlert(this, deviceManufacturer);
-    }
 
     @Override
     protected void onResume() {
