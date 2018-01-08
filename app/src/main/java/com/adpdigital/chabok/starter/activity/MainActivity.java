@@ -13,8 +13,6 @@ import com.adpdigital.push.ConnectionStatus;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FIRST_RUN_PREFERENCES_NAME = "skipProtectedAppsMessage";
-
     String TAG = "MainActivity";
     private AdpPushClient chabok;
 
