@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            boolean result = logFile.createNewFile();
+            boolean result = logFile.exists() || logFile.createNewFile();
 
 
             if (result) {
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 String cmd = "logcat -c -d -f" + logFile.getAbsolutePath();
                 Runtime.getRuntime().exec(cmd);
 
-//                shareFile(MainActivity.this, logFile.getAbsoluteFile());
+                shareFile(MainActivity.this, logFile.getAbsoluteFile());
             }
 
 
