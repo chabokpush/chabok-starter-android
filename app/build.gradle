@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.adpdigital.chabok.starter"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,12 @@ android {
 }
 
 
+repositories {
+    flatDir {
+        dirs 'aars'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -31,7 +37,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.arturogutierrez:badges:1.0.5@aar'
     compile 'me.leolin:ShortcutBadger:1.1.18@aar'
-    compile 'com.adpdigital.push:chabok-lib:2.10.0'
+    compile (name: 'chabok-lib-debug-2.10.2', ext: 'aar')
     compile 'com.google.android.gms:play-services-gcm:11.0.4'
     compile 'com.android.support:design:26.+'
 }

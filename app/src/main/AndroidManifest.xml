@@ -8,6 +8,9 @@
 
     <uses-permission android:name="com.adpdigital.chabok.starter.permission.C2D_MESSAGE" />
 
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".application.StarterApp"
         android:allowBackup="true"
