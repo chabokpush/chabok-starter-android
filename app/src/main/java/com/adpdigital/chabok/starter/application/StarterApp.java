@@ -1,9 +1,11 @@
 package com.adpdigital.chabok.starter.application;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.adpdigital.chabok.starter.activity.MainActivity;
 import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.PushMessage;
 
 import static com.adpdigital.chabok.starter.common.Constants.SDK_PASSWORD;
 import static com.adpdigital.chabok.starter.common.Constants.SDK_USERNAME;
@@ -33,12 +35,18 @@ public class StarterApp extends Application {
             );
             chabok.setDevelopment(true);
 
+            chabok.addListener(this);
+
             String userId = chabok.getUserId();
 
             if (userId != null && !userId.isEmpty()) {
                 chabok.register(userId);
             }
         }
+    }
+
+    public void onEvent(PushMessage message){
+        Log.d("MSG","Got Chabok message " + message);
     }
 
     public synchronized AdpPushClient getPushClient() throws IllegalStateException {
