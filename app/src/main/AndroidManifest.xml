@@ -34,13 +34,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
-        <receiver android:name=".PushMessageReceiver">
-            <intent-filter>
-                <category android:name="com.adpdigital.chabok.starter" />
-
-                <action android:name="com.adpdigital.push.client.MSGRECEIVE" />
-            </intent-filter>
-        </receiver>
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:enabled="true"
