@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.adpdigital.chabok.starter.R;
 import com.adpdigital.chabok.starter.application.StarterApp;
 import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.AppState;
 import com.adpdigital.push.Callback;
 import com.adpdigital.push.ConnectionStatus;
 
@@ -72,6 +73,22 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, status.name());
             }
         });
+    }
+
+    public void onEvent(AppState state){
+        switch (state) {
+            case REGISTERED:
+                Log.d(TAG, "Registered ..........");
+                break;
+            case INSTALL:
+                Log.d(TAG, "Install ..........");
+                break;
+            case LAUNCH:
+                Log.d(TAG, "Launch ..........");
+                break;
+            default:
+                Log.d(TAG, "Protected grant needed ..........");
+        }
     }
 
     private void fetchAndUpdateConnectionStatus() {
