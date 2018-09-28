@@ -1,15 +1,31 @@
 <resources>
     <string name="app_name">chabok-starter</string>
-    <string name="connected">آنلاین</string>
-    <string name="connecting">در حال اتصال</string>
-    <string name="disconnected">آفلاین</string>
-    <string name="register">ثبت‌نام‌</string>
+    <string name="connected">Connected</string>
+    <string name="connecting">Connecting</string>
     <string name="dont_show_again">دوباره نمایش نده</string>
     <string name="goto_protected">برو به برنامه های محافظت شده</string>
     <string name="remindme">یادآوری کن</string>
-    <string name="menu_item_ok">تایید</string>
-    <string name="user_id">شناسه کاربر</string>
-    <string name="invalid_user_id">شناسه کاربر نمی‌تواند خالی باشد.</string>
+    <string name="menu_item_ok">OK</string>
+    <string name="user_id">User id</string>
+    <string name="invalid_user_id">Please, enter userId, The userId could not be empty.</string>
     <string name="protected_apps">برنامه‌های محافظت شده</string>
     <string name="protected_apps_desc" formatted="false">برنامه %s برای کارکرد درست می‌بایست در لیست برنامه‌های محافظت شده فعال شود.</string>
+    <string name="chabok_starter_project">Chabok starter project</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="channel">channel</string>
+    <string name="unregister">Unregister</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="unsubscribe">Unsubscribe</string>
+    <string name="message_text">Message text</string>
+    <string name="publish_message">Publish message</string>
+    <string name="publish_event">Publish event</string>
+    <string name="tag_name">Tag name</string>
+    <string name="addtag">AddTag</string>
+    <string name="removetag">RemoveTag</string>
+    <string name="track_user_interactions">Track user interactions :</string>
+    <string name="addtocart">AddToCart</string>
+    <string name="purchase">Purchase</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="register">Register</string>
 </resources>

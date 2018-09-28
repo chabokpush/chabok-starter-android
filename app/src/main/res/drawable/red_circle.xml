@@ -4,9 +4,9 @@
     android:shape="oval">
 
     <solid
-        android:color="@color/disconnected_status"/>
+        android:color="@color/disconnected"/>
 
     <size
-        android:width="250dp"
-        android:height="250dp"/>
+        android:width="20dp"
+        android:height="20dp"/>
 </shape>
