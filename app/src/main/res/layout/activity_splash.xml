@@ -23,7 +23,7 @@
         android:textAlignment="center"
         android:layout_below="@+id/splash_logo"
         android:layout_marginTop="10dp"
-        android:text="Chabok starter project"
+        android:text="@string/chabok_starter_project"
         android:layout_alignParentLeft="true"
         tools:ignore="RtlCompat" />
 
@@ -34,6 +34,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp"
-        app:srcCompat="@drawable/Chabok_Realtime_Solutions" />
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/crs"
+        android:adjustViewBounds="true"
+
+        android:contentDescription="Chabok Realtime Solutions" />
 
 </RelativeLayout>
