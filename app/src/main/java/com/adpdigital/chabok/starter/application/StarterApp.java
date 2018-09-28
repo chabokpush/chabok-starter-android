@@ -20,7 +20,14 @@ public class StarterApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         initPushClient();
+
+        String userId = chabok.getUserId();
+
+        if (userId != null && !userId.isEmpty()) {
+            chabok.register(userId);
+        }
     }
 
     private synchronized void initPushClient() {
@@ -36,24 +43,11 @@ public class StarterApp extends Application {
             chabok.setDevelopment(true);
 
             chabok.addListener(this);
-
-            String userId = chabok.getUserId();
-
-            if (userId != null && !userId.isEmpty()) {
-                chabok.register(userId);
-            }
         }
     }
 
     public void onEvent(PushMessage message){
         Log.d("MSG","Got Chabok message " + message);
-    }
-
-    public synchronized AdpPushClient getPushClient() throws IllegalStateException {
-        if (chabok == null) {
-            throw new IllegalStateException("Adp Push Client not initialized");
-        }
-        return chabok;
     }
 
     @Override
