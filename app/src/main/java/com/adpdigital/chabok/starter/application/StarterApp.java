@@ -1,17 +1,14 @@
 package com.adpdigital.chabok.starter.application;
 
-import android.app.Application;
 import android.util.Log;
-
-import com.adpdigital.chabok.starter.activity.MainActivity;
-import com.adpdigital.push.AdpPushClient;
+import android.app.Application;
 import com.adpdigital.push.PushMessage;
-
+import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.chabok.starter.activity.MainActivity;
 import static com.adpdigital.chabok.starter.common.Constants.SDK_PASSWORD;
 import static com.adpdigital.chabok.starter.common.Constants.SDK_USERNAME;
 import static com.adpdigital.chabok.starter.common.Constants.YOUR_API_KEY;
 import static com.adpdigital.chabok.starter.common.Constants.YOUR_APP_ID;
-
 
 public class StarterApp extends Application {
 
@@ -24,7 +21,6 @@ public class StarterApp extends Application {
         initPushClient();
 
         String userId = chabok.getUserId();
-
         if (userId != null && !userId.isEmpty()) {
             chabok.register(userId);
         }
