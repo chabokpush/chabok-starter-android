@@ -215,12 +215,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
     //------------ Register to chabok
-
     private View.OnClickListener registerBtnOnClick() {
         return new View.OnClickListener() {
             @Override
@@ -234,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
     private View.OnClickListener unregisterBtnOnClick(){
         return new View.OnClickListener() {
             @Override
@@ -270,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
     private View.OnClickListener unsubscribeBtnOnClick(){
         return new View.OnClickListener() {
             @Override
@@ -297,7 +294,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
 
     // ---------------- Publish
     private View.OnClickListener publishMessageBtnOnClick() {
@@ -362,7 +358,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ---------- Tags
-
     private View.OnClickListener addTagBtnOnClick() {
         return new View.OnClickListener() {
             @Override
@@ -386,6 +381,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
     private View.OnClickListener removeTagBtnOnClick() {
         return new View.OnClickListener(){
             @Override
@@ -411,7 +407,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ------------ Track
-
     private View.OnClickListener addToCartBtnOnClick() {
         return new View.OnClickListener(){
 
@@ -428,6 +423,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
     private View.OnClickListener purchaseBtnOnClick() {
         return new View.OnClickListener() {
             @Override
