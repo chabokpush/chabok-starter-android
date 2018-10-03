@@ -74,13 +74,17 @@ public class StarterApp extends Application {
 
                 //FCM message data is here
                 Object data = payload.get("data");
-                Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + String.valueOf(data));
+                if (data != null) {
+                    Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + String.valueOf(data));
+                }
             } else if (chabokNotification.getMessage() != null) {
                 PushMessage payload = chabokNotification.getMessage();
 
                 //Chabok message data is here
                 JSONObject data = payload.getData();
-                Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + data);
+                if (data != null) {
+                    Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + data);
+                }
             }
         }
     }
