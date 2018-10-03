@@ -30,8 +30,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.arturogutierrez:badges:1.0.5@aar'
-    compile 'me.leolin:ShortcutBadger:1.1.18@aar'
-    compile 'com.adpdigital.push:chabok-lib:2.+'
+    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
+    compile 'com.adpdigital.push:chabok-lib:2.13.+'
     compile 'com.google.android.gms:play-services-gcm:11.0.4'
     compile 'com.android.support:design:26.+'
 }
