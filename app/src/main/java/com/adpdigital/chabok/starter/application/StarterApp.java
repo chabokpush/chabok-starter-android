@@ -42,8 +42,12 @@ public class StarterApp extends Application {
         }
     }
 
-    public void onEvent(PushMessage message){
-        Log.d("MSG","Got Chabok message " + message);
+    public void onEvent(PushMessage message) {
+        Log.d(TAG, "\n\n--------------------\n\nGOT MESSAGE " + message + "\n\n");
+        JSONObject data = message.getData();
+        if (data != null){
+            Log.d(TAG, "--------------------\n\n The message data is : " + data + "\n\n");
+        }
     }
 
     @Override
