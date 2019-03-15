@@ -21,4 +21,8 @@ Please use the following account:
 for more information about this app please visit our [website](http://chabokpush.com) and refer to chabok [documents](http://doc.chabokpush.com) section.
 
 ## Screenshot : 
-<img src="https://github.com/chabokpush/chabok-starter-android/raw/master/starter.png" width="270px" height="470"/>
+<img src="https://github.com/chabokpush/chabok-starter-android/raw/master/starter.png" width="270px" height="470px"/>
+
+## Download APK
+
+<img src="https://github.com/chabokpush/chabok-starter-android/raw/master/qr-code (1).png" width="100px" height="100px"/>
