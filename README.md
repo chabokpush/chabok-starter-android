@@ -25,4 +25,4 @@ for more information about this app please visit our [website](http://chabokpush
 
 ## Download APK
 
-<img src="https://github.com/chabokpush/chabok-starter-android/raw/master/Download_Chabok_starter_apk.png" width="150px" height="150px"/>
+<img src="https://github.com/chabokpush/chabok-starter-android/raw/master/starter.qr.png" width="150px" height="150px"/>
