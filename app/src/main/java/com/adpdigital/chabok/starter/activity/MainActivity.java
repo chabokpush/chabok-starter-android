@@ -44,15 +44,15 @@ public class MainActivity extends AppCompatActivity {
             chabok.showProtectedAppSettings(MainActivity.this, getString(R.string.app_name), null, null);
         }
 
-        this.userIdTxt = findViewById(R.id.useridTextView);
-        this.channelTxt = findViewById(R.id.channelTextView);
+        this.userIdTxt = (EditText) findViewById(R.id.useridTextView);
+        this.channelTxt = (EditText) findViewById(R.id.channelTextView);
 
-        this.messageBodyTxt = findViewById(R.id.messageBodyEditText);
-        this.messgeUserIdTxt = findViewById(R.id.messageUseridTextView);
-        this.messageChannelTxt = findViewById(R.id.messageChannelTextView);
+        this.messageBodyTxt = (EditText) findViewById(R.id.messageBodyEditText);
+        this.messgeUserIdTxt = (EditText) findViewById(R.id.messageUseridTextView);
+        this.messageChannelTxt = (EditText) findViewById(R.id.messageChannelTextView);
 
-        this.tagNameTxt = findViewById(R.id.tagsNameTextView);
-        this.messageLogsTxt = findViewById(R.id.messageLogsTextView);
+        this.tagNameTxt = (EditText) findViewById(R.id.tagsNameTextView);
+        this.messageLogsTxt = (TextView) findViewById(R.id.messageLogsTextView);
 
         final String chabokUserId = AdpPushClient.get().getUserId();
         if (chabokUserId != null) {
@@ -60,43 +60,43 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Register to chabok
-        Button registerButton = findViewById(R.id.registerButton);
+        Button registerButton = (Button) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(this.registerBtnOnClick());
 
-        Button unregisterButton = findViewById(R.id.unregisterButton);
+        Button unregisterButton = (Button) findViewById(R.id.unregisterButton);
         unregisterButton.setOnClickListener(this.unregisterBtnOnClick());
 
-        Button subscribeButton = findViewById(R.id.subscribeButton);
+        Button subscribeButton = (Button) findViewById(R.id.subscribeButton);
         subscribeButton.setOnClickListener(this.subscribeBtnOnClick());
 
-        Button unsubscribeButton = findViewById(R.id.unsubscribeButton);
+        Button unsubscribeButton = (Button) findViewById(R.id.unsubscribeButton);
         unsubscribeButton.setOnClickListener(this.unsubscribeBtnOnClick());
 
         // Publish
-        Button publishEventButton = findViewById(R.id.publishEventButton);
+        Button publishEventButton = (Button) findViewById(R.id.publishEventButton);
         publishEventButton.setOnClickListener(this.publishEventBtnOnClick());
 
-        Button publishMessageButton = findViewById(R.id.publishMessageButton);
+        Button publishMessageButton = (Button) findViewById(R.id.publishMessageButton);
         publishMessageButton.setOnClickListener(this.publishMessageBtnOnClick());
 
         // Tag
-        Button addTagButton = findViewById(R.id.addTagButton);
+        Button addTagButton = (Button) findViewById(R.id.addTagButton);
         addTagButton.setOnClickListener(this.addTagBtnOnClick());
 
-        Button removeTagButton = findViewById(R.id.removeTagButton);
+        Button removeTagButton = (Button) findViewById(R.id.removeTagButton);
         removeTagButton.setOnClickListener(this.removeTagBtnOnClick());
 
         // Track
-        Button addToCartButton = findViewById(R.id.addToCartButton);
+        Button addToCartButton = (Button) findViewById(R.id.addToCartButton);
         addToCartButton.setOnClickListener(this.addToCartBtnOnClick());
 
-        Button purchaseButton = findViewById(R.id.purchaseButton);
+        Button purchaseButton = (Button) findViewById(R.id.purchaseButton);
         purchaseButton.setOnClickListener(this.purchaseBtnOnClick());
 
-        Button likeButton = findViewById(R.id.likeButton);
+        Button likeButton = (Button) findViewById(R.id.likeButton);
         likeButton.setOnClickListener(this.likeBtnOnClick());
 
-        Button commentButton = findViewById(R.id.commentButton);
+        Button commentButton = (Button) findViewById(R.id.commentButton);
         commentButton.setOnClickListener(this.commentBtnOnClick());
     }
 
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateConnectionStatus(ConnectionStatus status) {
         View connectionStatusView =  findViewById(R.id.connectionStatusView);
-        TextView connectionStatus = findViewById(R.id.connectionStatusTextView);
+        TextView connectionStatus = (TextView) findViewById(R.id.connectionStatusTextView);
 
         if (connectionStatus != null && status != null) {
             switch (status) {

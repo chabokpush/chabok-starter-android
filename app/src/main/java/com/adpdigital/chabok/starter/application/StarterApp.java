@@ -29,6 +29,8 @@ public class StarterApp extends Application {
         String userId = chabok.getUserId();
         if (userId != null && !userId.isEmpty()) {
             chabok.register(userId);
+        } else {
+            chabok.registerAsGuest();
         }
     }
 
@@ -45,6 +47,7 @@ public class StarterApp extends Application {
             chabok.setDevelopment(true);
             chabok.addListener(this);
             chabok.addNotificationHandler(getNotificationHandler());
+            chabok.setDefaultTracker("8iFRmA");
         }
     }
 
