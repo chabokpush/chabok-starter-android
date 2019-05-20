@@ -1,5 +1,7 @@
 package com.adpdigital.chabok.starter.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.os.Bundle;
 import android.view.View;
@@ -98,6 +100,17 @@ public class MainActivity extends AppCompatActivity {
 
         Button commentButton = (Button) findViewById(R.id.commentButton);
         commentButton.setOnClickListener(this.commentBtnOnClick());
+
+        Intent intent = getIntent();
+        AdpPushClient.get().appWillOpenUrl(intent.getData());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        Uri data = intent.getData();
+        AdpPushClient.get().appWillOpenUrl(data);
     }
 
     @Override
