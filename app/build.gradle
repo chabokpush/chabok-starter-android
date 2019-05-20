@@ -7,8 +7,8 @@ android {
         applicationId "com.adpdigital.chabok.starter"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 21
-        versionName "2.1"
+        versionCode 220
+        versionName "2.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
