@@ -32,12 +32,13 @@
             android:background="@drawable/white_input_bg"
             android:gravity="center"
             android:hint="@string/user_id"
+            android:inputType="textPersonName"
             android:maxLines="1"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textColorHint="@color/hint_color"
             android:textSize="18sp"
-            android:inputType="textPersonName" />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/register_btn"
@@ -51,7 +52,8 @@
             android:text="@string/register"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
     </LinearLayout>
 
