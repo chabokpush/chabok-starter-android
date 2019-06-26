@@ -6,223 +6,281 @@
     android:background="@drawable/gradient_bg"
     tools:context="com.adpdigital.chabok.starter.activity.MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <GridLayout
-            android:id="@+id/statusView"
-            android:columnCount="2"
-            android:rowCount="1"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_height="wrap_content">
 
-            <View
-                android:id="@+id/connectionStatusView"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginStart="18dp"
-                android:background="@color/disconnected" />
-            <TextView
-                android:id="@+id/connectionStatusTextView"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/disconnected"
-                android:layout_gravity="fill"
-                />
-
-        </GridLayout>
-
-        <GridLayout
-            android:columnCount="2"
-            android:rowCount="1"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/useridTextView"
-                android:hint="@string/user_id"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:inputType="textPersonName"
-                android:layout_gravity="left|right|top|bottom"
-                tools:ignore="RtlHardcoded" />
-            <EditText
-                android:id="@+id/channelTextView"
-                android:layout_width="80dp"
-                android:hint="@string/channel"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                android:inputType="textPersonName"
-                android:layout_gravity="top|bottom"
-                android:layout_height="wrap_content"
-                tools:ignore="RtlHardcoded" />
-        </GridLayout>
-
-        <GridLayout
-            android:rowCount="1"
-            android:columnCount="4"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/registerButton"
-                android:text="@string/register"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/unregisterButton"
-                android:text="@string/unregister"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/subscribeButton"
-                android:text="@string/subscribe"
-                android:layout_gravity="fill"/>
-
-            <Button
-                android:id="@+id/unsubscribeButton"
-                android:layout_gravity="fill"
-                android:text="@string/unsubscribe" />
-        </GridLayout>
-
-        <GridLayout
-            android:rowCount="2"
-            android:columnCount="2"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/messageUseridTextView"
-                android:ems="10"
-                android:hint="@string/user_id"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:inputType="textPersonName"
-                android:layout_gravity="left|right|top|bottom"
-                tools:ignore="RtlHardcoded" />
-            <EditText
-                android:id="@+id/messageChannelTextView"
-                android:layout_width="80dp"
-                android:hint="@string/channel"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                android:inputType="textPersonName"
-                android:layout_gravity="top|bottom"
-                android:layout_height="wrap_content"
-                tools:ignore="RtlHardcoded" />
-            <EditText
-                android:id="@+id/messageBodyEditText"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_columnSpan="2"
-                android:hint="@string/message_text"
-                android:layout_gravity="fill"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                android:inputType="textPersonName" />
-        </GridLayout>
-
-        <GridLayout
-            android:rowCount="1"
-            android:columnCount="2"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/publishMessageButton"
-                android:text="@string/publish_message"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/publishEventButton"
-                android:text="@string/publish_event"
-                android:layout_gravity="fill"/>
-        </GridLayout>
-
-        <GridLayout
-            android:rowCount="1"
-            android:columnCount="3"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/tagsNameTextView"
-                android:layout_width="100dp"
-                android:hint="@string/tag_name"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                android:inputType="textPersonName"
-                android:layout_gravity="top|bottom"
-                android:layout_height="wrap_content"
-                tools:ignore="RtlHardcoded" />
-            <Button
-                android:id="@+id/addTagButton"
-                android:text="@string/addtag"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/removeTagButton"
-                android:text="@string/removetag"
-                android:layout_gravity="fill"/>
-        </GridLayout>
-
-        <GridLayout
-            android:rowCount="2"
-            android:columnCount="4"
-            android:layout_marginTop="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="@string/track_user_interactions"
-                android:layout_column="0"
-                android:layout_columnSpan="4"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"
-                />
-            <Button
-                android:id="@+id/addToCartButton"
-                android:text="@string/addtocart"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/purchaseButton"
-                android:text="@string/purchase"
-                android:layout_gravity="fill"/>
-            <Button
-                android:id="@+id/likeButton"
-                android:text="@string/like"
-                android:layout_gravity="fill"/>
-
-            <Button
-                android:id="@+id/commentButton"
-                android:layout_gravity="fill"
-                android:text="@string/comment" />
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/textView2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Message logs:" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/messageLogsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/gray"
-            android:scrollbars="vertical"
-            />
+            <GridLayout
+                android:id="@+id/statusView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:columnCount="2"
+                android:rowCount="1">
 
-    </LinearLayout>
+                <View
+                    android:id="@+id/connectionStatusView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginStart="18dp"
+                    android:background="@color/disconnected" />
+
+                <TextView
+                    android:id="@+id/connectionStatusTextView"
+                    android:layout_gravity="fill"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/disconnected" />
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <EditText
+                    android:id="@+id/useridTextView"
+                    android:layout_gravity="left|right|top|bottom"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:hint="@string/user_id"
+                    android:inputType="textPersonName"
+                    tools:ignore="RtlHardcoded" />
+
+                <EditText
+                    android:id="@+id/channelTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|bottom"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:hint="@string/channel"
+                    android:inputType="textPersonName"
+                    tools:ignore="RtlHardcoded" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:columnCount="4"
+                android:orientation="horizontal"
+                android:rowCount="1">
+
+                <Button
+                    android:id="@+id/registerButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/register" />
+
+                <Button
+                    android:id="@+id/unregisterButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/unregister" />
+
+                <Button
+                    android:id="@+id/subscribeButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/subscribe" />
+
+                <Button
+                    android:id="@+id/unsubscribeButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/unsubscribe" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <EditText
+                    android:id="@+id/messageUseridTextView"
+                    android:layout_gravity="left|right|top|bottom"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:ems="10"
+                    android:hint="@string/user_id"
+                    android:inputType="textPersonName"
+                    tools:ignore="RtlHardcoded" />
+
+                <EditText
+                    android:id="@+id/messageChannelTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|bottom"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:hint="@string/channel"
+                    android:inputType="textPersonName"
+                    tools:ignore="RtlHardcoded" />
+
+                <EditText
+                    android:id="@+id/messageBodyEditText"
+                    android:layout_column="0"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_row="1"
+                    android:hint="@string/message_text"
+                    android:inputType="textPersonName" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <Button
+                    android:id="@+id/publishMessageButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/publish_message" />
+
+                <Button
+                    android:id="@+id/publishEventButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/publish_event" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="3"
+                android:rowCount="1">
+
+                <EditText
+                    android:id="@+id/tagsNameTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|bottom"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:hint="@string/tag_name"
+                    android:inputType="textPersonName"
+                    tools:ignore="RtlHardcoded" />
+
+                <Button
+                    android:id="@+id/addTagButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/addtag" />
+
+                <Button
+                    android:id="@+id/removeTagButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/removetag" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="4"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_column="0"
+                    android:layout_columnSpan="4"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:text="User attributes" />
+
+                <Button
+                    android:id="@+id/setUserAttributeButton"
+                    android:layout_gravity="fill"
+                    android:text="Send User Attributes" />
+
+                <Button
+                    android:id="@+id/incrementUserAttributeButton"
+                    android:layout_gravity="fill"
+                    android:text="Increase comedy_movie" />
+
+            </GridLayout>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:columnCount="4"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_column="0"
+                    android:layout_columnSpan="4"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/track_user_interactions" />
+
+                <Button
+                    android:id="@+id/addToCartButton"
+                    android:layout_gravity="fill"
+                    android:text="AddToCard (50,000)" />
+
+                <Button
+                    android:id="@+id/purchaseButton"
+                    android:layout_gravity="fill"
+                    android:text="Purchase (20,000)" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:columnCount="4"
+                android:rowCount="2">
+                <Button
+                    android:id="@+id/likeButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/like" />
+
+                <Button
+                    android:id="@+id/commentButton"
+                    android:layout_gravity="fill"
+                    android:text="@string/comment" />
+            </GridLayout>
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Message logs:" />
+
+            <TextView
+                android:id="@+id/messageLogsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
