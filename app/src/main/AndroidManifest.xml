@@ -27,11 +27,6 @@
         <activity
             android:name=".activity.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter android:label="ChabokStarter">
                 <action android:name="android.intent.action.VIEW" />
@@ -41,6 +36,12 @@
                 <data android:scheme="starter"
                     android:host="detail" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
         </activity>
 
         <receiver
