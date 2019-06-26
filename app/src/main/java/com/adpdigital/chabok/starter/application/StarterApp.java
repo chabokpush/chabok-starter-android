@@ -1,9 +1,13 @@
 package com.adpdigital.chabok.starter.application;
 
+import android.net.Uri;
 import android.util.Log;
 import android.os.Bundle;
 import org.json.JSONObject;
 import android.app.Application;
+
+import com.adpdigital.push.ChabokNotificationAction;
+import com.adpdigital.push.OnDeeplinkResponseListener;
 import com.adpdigital.push.PushMessage;
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ChabokNotification;
@@ -48,6 +52,13 @@ public class StarterApp extends Application {
             chabok.addListener(this);
             chabok.addNotificationHandler(getNotificationHandler());
             chabok.setDefaultTracker("8iFRmA");
+
+            chabok.setOnDeeplinkResponseListener(new OnDeeplinkResponseListener() {
+                @Override
+                public boolean launchReceivedDeeplink(Uri uri) {
+                    return true;
+                }
+            });
         }
     }
 
@@ -66,6 +77,20 @@ public class StarterApp extends Application {
                 // return false to prevent this notification to be shown to the user, otherwise true
                 getDataFromChabokNotification(chabokNotification);
                 return true;
+            }
+
+            @Override
+            public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+                if (notificationAction.type == ChabokNotificationAction.ActionType.ActionTaken){
+                    //Click on an action.
+                } else if (notificationAction.type == ChabokNotificationAction.ActionType.Opened){
+                    //Notification opened
+                } else if (notificationAction.type == ChabokNotificationAction.ActionType.Dismissed){
+                    //Notification dismissed
+                }
+
+                //true to prevent launch activity that returned from getActivityClass or navigation to a url.
+                return super.notificationOpened(message, notificationAction);
             }
         };
     }
