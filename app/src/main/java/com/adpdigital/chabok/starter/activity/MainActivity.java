@@ -14,11 +14,16 @@ import android.widget.TextView;
 import com.adpdigital.push.AppState;
 import com.adpdigital.push.Callback;
 import android.annotation.SuppressLint;
+
+import com.adpdigital.push.ChabokEvent;
 import com.adpdigital.push.PushMessage;
 import com.adpdigital.chabok.starter.R;
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ConnectionStatus;
+
 import android.support.v7.app.AppCompatActivity;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -441,7 +446,10 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                AdpPushClient.get().track("AddToCart",data);
+                ChabokEvent event = new ChabokEvent(50000, "RIAL");
+                event.setData(data);
+
+                AdpPushClient.get().trackPurchase("AddToCard", event);
             }
         };
     }
@@ -457,7 +465,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                AdpPushClient.get().track("Purchase",data);
+                AdpPushClient.get().trackPurchase("Purchase", new ChabokEvent(20000, "RIAL"));
             }
         };
     }
