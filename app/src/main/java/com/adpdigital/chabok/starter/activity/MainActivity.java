@@ -101,6 +101,15 @@ public class MainActivity extends AppCompatActivity {
         Button commentButton = (Button) findViewById(R.id.commentButton);
         commentButton.setOnClickListener(this.commentBtnOnClick());
 
+        Button setUserAttributeButton = (Button) findViewById(R.id.setUserAttributeButton);
+        setUserAttributeButton.setOnClickListener(this.setUserAttributeButtonOnClick());
+
+        Button incrementUserAttributeButton = (Button) findViewById(R.id.incrementUserAttributeButton);
+        incrementUserAttributeButton.setOnClickListener(this.incrementUserAttributeButtonOnClick());
+
+//        Button publishBackgroundButton = (Button) findViewById(R.id.publishBackgroundButton);
+//        publishBackgroundButton.setOnClickListener(this.publishBackgroundButtonOnClick());
+
         Intent intent = getIntent();
         AdpPushClient.get().appWillOpenUrl(intent.getData());
     }
@@ -484,4 +493,49 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
+    private View.OnClickListener setUserAttributeButtonOnClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMap<String, Object> attribute = new HashMap<>();
+                attribute.put("firstName", "Chabok");
+                attribute.put("lastName", "Platform");
+                attribute.put("age", 5);
+                attribute.put("gender", "Male");
+                attribute.put("shoesSize", 43);
+
+
+                AdpPushClient.get().setUserAttributes(attribute);
+            }
+        };
+    }
+
+    private View.OnClickListener incrementUserAttributeButtonOnClick() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AdpPushClient.get().incrementUserAttribute("comdey_movie", 1);
+            }
+        };
+    }
+
+//    private View.OnClickListener publishBackgroundButtonOnClick() {
+//        return new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                JSONObject data = new JSONObject();
+//
+//                try {
+//                    data.put("lat", 32.3);
+//                    data.put("lng", 52.4);
+//                    data.put("ts", System.currentTimeMillis());
+//                    AdpPushClient.get().publishBackground("geo", data);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        };
+//    }
 }
