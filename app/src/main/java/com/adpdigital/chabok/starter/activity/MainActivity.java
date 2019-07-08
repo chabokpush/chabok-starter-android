@@ -441,15 +441,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 JSONObject data = new JSONObject();
                 try {
-                    data.put("capId",123456);
+                    data.put("value","PRODUCT_123");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                ChabokEvent event = new ChabokEvent(50000, "RIAL");
-                event.setData(data);
-
-                AdpPushClient.get().trackPurchase("AddToCard", event);
+                AdpPushClient.get().track("AddToCard", data);
             }
         };
     }
@@ -465,7 +461,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                AdpPushClient.get().trackPurchase("Purchase", new ChabokEvent(20000, "RIAL"));
+                AdpPushClient.get().trackPurchase("Purchase", new ChabokEvent(10000, "RIAL"));
             }
         };
     }
