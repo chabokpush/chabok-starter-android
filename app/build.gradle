@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.adpdigital.chabok.starter"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 220
         versionName "2.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,18 +21,18 @@ android {
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
 
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.github.arturogutierrez:badges:1.0.5@aar'
-    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
-    compile 'com.adpdigital.push:chabok-lib:2.17.0'
-    compile 'com.google.android.gms:play-services-gcm:11.0.4'
-    compile 'com.android.support:design:26.+'
-    compile 'com.android.installreferrer:installreferrer:1.0'
+    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.github.arturogutierrez:badges:1.0.5@aar'
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.adpdigital.push:chabok-lib:2.17.1'
+    implementation 'com.google.android.gms:play-services-gcm:11.0.4'
+    implementation 'com.android.support:design:28.+'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
 }

@@ -21,7 +21,7 @@ import com.adpdigital.chabok.starter.R;
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ConnectionStatus;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 

@@ -6,13 +6,14 @@ import android.os.Bundle;
 import org.json.JSONObject;
 import android.app.Application;
 
+import androidx.core.app.NotificationCompat;
+
 import com.adpdigital.push.ChabokNotificationAction;
 import com.adpdigital.push.OnDeeplinkResponseListener;
 import com.adpdigital.push.PushMessage;
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ChabokNotification;
 import com.adpdigital.push.NotificationHandler;
-import android.support.v4.app.NotificationCompat;
 import com.adpdigital.chabok.starter.activity.MainActivity;
 import static com.adpdigital.chabok.starter.common.Constants.YOUR_APP_ID;
 import static com.adpdigital.chabok.starter.common.Constants.SDK_PASSWORD;
