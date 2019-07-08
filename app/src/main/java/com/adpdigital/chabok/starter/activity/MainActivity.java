@@ -523,7 +523,7 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdpPushClient.get().incrementUserAttribute("comdey_movie", 1);
+                AdpPushClient.get().incrementUserAttribute("comedy_movie", 1);
             }
         };
     }
